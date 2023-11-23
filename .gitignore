@@ -1,0 +1,25 @@
+# Logs
+scoreboard/logs
+scoreboard/*.log
+scoreboard/npm-debug.log*
+scoreboard/yarn-debug.log*
+scoreboard/yarn-error.log*
+scoreboard/pnpm-debug.log*
+scoreboard/lerna-debug.log*
+
+scoreboard/node_modules
+scoreboard/dist
+scoreboard/dist-ssr
+scoreboard/*.local
+
+# Editor directories and files
+scoreboard/.vscode/*
+scoreboard/!.vscode/extensions.json
+scoreboard/.idea
+scoreboard/.DS_Store
+scoreboard/*.suo
+scoreboard/*.ntvs*
+scoreboard/*.njsproj
+scoreboard/*.sln
+scoreboard/*.sw?
+api/node_modules

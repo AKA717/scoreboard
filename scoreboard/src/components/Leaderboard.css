@@ -1,0 +1,50 @@
+.input-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .table-head{
+    text-align: center;
+  }
+
+  .table-data{
+    text-align: center;
+    font-weight: 400;
+    font-size: larger;
+  }
+
+  .input {
+    margin-right: 10px;
+    width: 250px;
+  }
+  
+  .score-table {
+    overflow-x: auto;
+    width: 80%;
+    margin: 25px auto;
+    animation: fadeInUp 1s; /* Add a fadeInUp animation */
+    position: fixed;
+  }
+  
+  .input{
+    border: 1px solid black;
+    height: 1rem;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+  }
