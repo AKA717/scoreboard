@@ -1,0 +1,37 @@
+version: '3'
+services:
+  # Frontend service
+  frontend:
+    image: node:latest   # You can use a specific Node.js version if needed
+    working_dir: /app
+    ports:
+      - "5173:5173"  # Expose the React app on port 3000
+    volumes:
+      - ./scoreboard:/app  # Mount your local React app directory into the container
+    command: sh -c "npm install && npm run dev"  # Start the React app
+
+    depends_on:
+      - backend
+
+  # Backend service
+  backend:
+    image: node:latest   # You can use a specific Node.js version if needed
+    working_dir: /app
+    ports:
+      - "5000:5000"  # Expose the Node.js API on port 5000
+    volumes:
+      - ./api:/app  # Mount your local Node.js app directory into the container
+    command: sh -c "npm install && npm start"  # Start the Node.js API
+
+    depends_on:
+      - database
+    environment:
+      - DATABASE_URL=mmongodb://localhost:27017/score
+
+  database:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+
