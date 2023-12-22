@@ -8,13 +8,18 @@ const playerRouter = require('./routes/player-router');
 const app = express();
 
 //connect mongodb
-mongoose.connect('mongodb://127.0.0.1:27017/score', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
+const connectToMongoDB = async () => {
+  try {
+    await mongoose.connect('mongodb://database:27017/score', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
     console.log('Connected to MongoDB');
-  })
-  .catch((error) => {
+  } catch (error) {
     console.error('MongoDB connection error:', error);
-  });
+    // Add retry logic or handle the error appropriately
+  }
+};
 
 mongoose.Promise = global.Promise;
 
